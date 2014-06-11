@@ -1,13 +1,13 @@
-# Node.js Style Guide
+# Node.js Guia Style
 
-This is a guide for writing consistent and aesthetically pleasing node.js code.
-It is inspired by what is popular within the community, and flavored with some
-personal opinions.
+Este guia foi escrito para escrever códigos cosistentes e esteticamente agradável em node.js.
+É inspirado nas práticas dentro da comunidade e com algumas percepções pessoais.
 
-This guide was created by [Felix Geisendörfer](http://felixge.de/) and is
-licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
-license. You are encouraged to fork this repository and make adjustments
-according to your preferences.
+O guia foi criado por [Felix Geisendärfer](http://felixge.de/) e está sob a licença
+[CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
+Você pode fazer o fork deste repositório e fazer ajuste conforme a sua preferência.
+
+A tradução para o português foi realizada por [André Nardy](https://github.com/anardy)
 
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
@@ -16,16 +16,25 @@ according to your preferences.
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
 spaces - a special kind of hell is awaiting you otherwise.
 
-## Newlines
+## 2 Espaços para identação
 
-Use UNIX-style newlines (`\n`), and a newline character as the last character
-of a file. Windows-style newlines (`\r\n`) are forbidden inside any repository.
+Use 2 espaços para identar seu código spaces for indenting your code and swear an oath to never mix tabs and
+spaces - a special kind of hell is awaiting you otherwise.
+
+## Novas Linhas
+
+O UNIX utiliza (`\n`) para identificar uma nova linha e é colocado como último caracter do arquivo.
+Já o Windows a nova linha é indicada com (`\r\n`) e é proibido dentro de qualquer repositório.
 
 ## No trailing whitespace
 
 Just like you brush your teeth after every meal, you clean up any trailing
 whitespace in your JS files before committing. Otherwise the rotten smell of
 careless neglect will eventually drive away contributors and/or co-workers.
+
+## Sem espaço em branco
+
+Assim como você escova os dentes após cada refeição, você deve limpar qualquer espaço em branco em seu arquivo JS antes de realizar o commit. Caso contrário, as negligências causadas afastará contribuidores e/ou colegas de trabalho.
 
 ## Use Semicolons
 
@@ -37,33 +46,45 @@ cheap syntactic pleasures.
 [the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
+
+## Use Ponto e Vírgula
+
+De acordo com a [scientific research][hnsemicolons], o uso de vírgula é fundamental dentro da nossa comunidade. Considere os pontos chaves do [the opposition][], mas seja um tradicionalista quando se refere aos mecanismos de correção de erros
+
+[the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
+[hnsemicolons]: http://news.ycombinator.com/item?id=1547647
+
 ## 80 characters per line
 
 Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
 last few years, but your brain has not. Use the additional room for split screen,
 your editor supports that, right?
 
-## Use single quotes
+## 80 caracteres por linha
 
-Use single quotes, unless you are writing JSON.
+Faça com que suas linhas tenham 80 caracteres. Sim, os monitores estão crescendo cada vez mais nos ultimos anos, mas seu cérebro não. Use o "additional room" para dividir a tela, seu editor suporta isto, certo? 
 
-*Right:*
+## Use aspas simples
+
+Use aspas simpes, ao menos que esteja escrevendo JSON.
+
+*Correto:*
 
 ```js
 var foo = 'bar';
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 var foo = "bar";
 ```
 
-## Opening braces go on the same line
+## Chaves de abertura na mesma linha
 
-Your opening braces go on the same line as the statement.
+As chaves de abertura vão na mesma linha da instrução de condição
 
-*Right:*
+*Correto:*
 
 ```js
 if (true) {
@@ -71,7 +92,7 @@ if (true) {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 if (true)
@@ -80,16 +101,15 @@ if (true)
 }
 ```
 
-Also, notice the use of whitespace before and after the condition statement.
+Além disso, observe o uso de espaços antes e depois da instrução de condição.
 
-## Declare one variable per var statement
+## Declare uma variável por instrução var
 
-Declare one variable per var statement, it makes it easier to re-order the
-lines. However, ignore [Crockford][crockfordconvention] when it comes to
+Declare uma variável para cada instrução var, isto torna mais fácil a reordenação das linhas. Porém, ignore [Crockford][crockfordconvention] when it comes to
 declaring variables deeper inside a function, just the declarations wherever
 they make sense.
 
-*Right:*
+*Certo:*
 
 ```js
 var keys   = ['foo', 'bar'];
@@ -102,7 +122,7 @@ while (keys.length) {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 var keys = ['foo', 'bar'],
@@ -118,52 +138,48 @@ while (keys.length) {
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
 
-## Use lowerCamelCase for variables, properties and function names
+## Use lowerCamelCase para variáveis, propriedades e nome de funções
 
-Variables, properties and function names should use `lowerCamelCase`.  They
-should also be descriptive. Single character variables and uncommon
-abbreviations should generally be avoided.
+Variáveis, propriedades e nome de funções devem user `lowerCamelCase`. Também devem ser descritivos. Variáveis com apenas um caracter e abreviaturas incomuns também devem ser evitadas.
 
-*Right:*
+*Certo:*
 
 ```js
 var adminUser = db.query('SELECT * FROM users ...');
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 var admin_user = db.query('SELECT * FROM users ...');
 ```
 
-## Use UpperCamelCase for class names
+## Use UpperCamelCase para nome de classes
 
-Class names should be capitalized using `UpperCamelCase`.
+Os nomes das Classes devem usar `UpperCamelCase`.
 
-*Right:*
+*Certo:*
 
 ```js
 function BankAccount() {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 function bank_Account() {
 }
 ```
 
-## Use UPPERCASE for Constants
+## Use UPPERCASE para Constantes
 
-Constants should be declared as regular variables or static class properties,
+As constantes devem ser declaradas as regular variables or static class properties,
 using all uppercase letters.
 
-Node.js / V8 actually supports mozilla's [const][const] extension, but
-unfortunately that cannot be applied to class members, nor is it part of any
-ECMA standard.
+Atualmente Node.js / V8 suporta a extensão [const][const], mas infelizmente isso não pode ser aplicado aos membros da classe e nem faz parte de qualquer parte do padrão ECMA.
 
-*Right:*
+*Correto:*
 
 ```js
 var SECOND = 1 * 1000;
@@ -173,7 +189,7 @@ function File() {
 File.FULL_PERMISSIONS = 0777;
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 const SECOND = 1 * 1000;
@@ -185,12 +201,12 @@ File.fullPermissions = 0777;
 
 [const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
 
-## Object / Array creation
+## Criação de Objetos / Array
 
 Use trailing commas and put *short* declarations on a single line. Only quote
 keys when your interpreter complains:
 
-*Right:*
+*Correto:*
 
 ```js
 var a = ['hello', 'world'];
@@ -200,7 +216,7 @@ var b = {
 };
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 var a = [
@@ -211,12 +227,12 @@ var b = {"good": 'code'
         };
 ```
 
-## Use the === operator
+## Use o operador ===
 
 Programming is not about remembering [stupid rules][comparisonoperators]. Use
-the triple equality operator as it will work just as expected.
+o operador triplo de igualdade, já que irá funcionar como o esperado.
 
-*Right:*
+*Correto:*
 
 ```js
 var a = 0;
@@ -226,7 +242,7 @@ if (a !== '') {
 
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 var a = 0;
@@ -237,11 +253,11 @@ if (a == '') {
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
-## Use multi-line ternary operator
+## Use várias linhas para operator ternário
 
-The ternary operator should not be used on a single line. Split it up into multiple lines instead.
+O operador ternário não deve ser usado em uma única linha. Quebre-o em várias linhas.
 
-*Right:*
+*Correto:*
 
 ```js
 var foo = (a === b)
@@ -249,7 +265,7 @@ var foo = (a === b)
   : 2;
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 var foo = (a === b) ? 1 : 2;
@@ -260,7 +276,7 @@ var foo = (a === b) ? 1 : 2;
 Do not extend the prototype of native JavaScript objects. Your future self will
 be forever grateful.
 
-*Right:*
+*Correto:*
 
 ```js
 var a = [];
@@ -269,7 +285,7 @@ if (!a.length) {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 Array.prototype.empty = function() {
@@ -286,7 +302,7 @@ if (a.empty()) {
 
 Any non-trivial conditions should be assigned to a descriptively named variable or function:
 
-*Right:*
+*Correto:*
 
 ```js
 var isValidPassword = password.length >= 4 && /^(?=.*\d).{4,}$/.test(password);
@@ -296,7 +312,7 @@ if (isValidPassword) {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
@@ -304,9 +320,9 @@ if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
 }
 ```
 
-## Write small functions
+## Escreva funções curtas
 
-Keep your functions short. A good function fits on a slide that the people in
+Mantenha suas funções curtas. Uma função boa A good function fits on a slide that the people in
 the last row of a big room can comfortably read. So don't count on them having
 perfect vision and limit yourself to ~15 lines of code per function.
 
@@ -315,7 +331,7 @@ perfect vision and limit yourself to ~15 lines of code per function.
 To avoid deep nesting of if-statements, always return a function's value as early
 as possible.
 
-*Right:*
+*Correto:*
 
 ```js
 function isPercentage(val) {
@@ -331,7 +347,7 @@ function isPercentage(val) {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 function isPercentage(val) {
@@ -347,8 +363,7 @@ function isPercentage(val) {
 }
 ```
 
-Or for this particular example it may also be fine to shorten things even
-further:
+Com esse exemplo é possível encurtar ainda mais a função:
 
 ```js
 function isPercentage(val) {
@@ -357,12 +372,12 @@ function isPercentage(val) {
 }
 ```
 
-## Name your closures
+## Nomei seus closures
 
 Feel free to give your closures a name. It shows that you care about them, and
 will produce better stack traces, heap and cpu profiles.
 
-*Right:*
+*Correto:*
 
 ```js
 req.on('end', function onEnd() {
@@ -370,7 +385,7 @@ req.on('end', function onEnd() {
 });
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 req.on('end', function() {
@@ -382,7 +397,7 @@ req.on('end', function() {
 
 Use closures, but don't nest them. Otherwise your code will become a mess.
 
-*Right:*
+*Correto:*
 
 ```js
 setTimeout(function() {
@@ -394,7 +409,7 @@ function afterConnect() {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 setTimeout(function() {
@@ -404,13 +419,11 @@ setTimeout(function() {
 }, 1000);
 ```
 
-## Use slashes for comments
+## Use barras para comentar
 
-Use slashes for both single line and multi line comments. Try to write
-comments that explain higher level mechanisms or clarify difficult
-segments of your code. Don't use comments to restate trivial things.
+Use as barra tanto para comentários em uma única linha como para múltiplas linhas. Tente sempre escrever comentários que explicam o mecanismo do código ou esclarecer uma parte complexa do mesmo. Não use comentário para descrever coisas triviais.
 
-*Right:*
+*Correto:*
 
 ```js
 // 'ID_SOMETHING=VALUE' -> ['ID_SOMETHING=VALUE'', 'SOMETHING', 'VALUE']
@@ -429,7 +442,7 @@ if (isSessionValid) {
 }
 ```
 
-*Wrong:*
+*Errado:*
 
 ```js
 // Execute a regex
@@ -450,9 +463,9 @@ if (isSessionValid) {
 
 ## Object.freeze, Object.preventExtensions, Object.seal, with, eval
 
-Crazy shit that you will probably never need. Stay away from it.
+Instruções que provavemente você nunca vai usar. Fique longe delas.
 
-## Getters and setters
+## Getters e setters
 
 Do not use setters, they cause more problems for people who try to use your
 software than they can solve.

@@ -1,6 +1,6 @@
-# Node.js Guia Style
+# Guia de Estilo Node.js
 
-Este guia foi escrito para escrever códigos cosistentes e esteticamente agradável em node.js.
+Este guia foi escrito para escrever códigos consistentes e esteticamente agradável em node.js.
 É inspirado nas práticas dentro da comunidade e com algumas percepções pessoais.
 
 O guia foi criado por [Felix Geisendärfer](http://felixge.de/) e está sob a licença
@@ -26,15 +26,9 @@ spaces - a special kind of hell is awaiting you otherwise.
 O UNIX utiliza (`\n`) para identificar uma nova linha e é colocado como último caracter do arquivo.
 Já o Windows a nova linha é indicada com (`\r\n`) e é proibido dentro de qualquer repositório.
 
-## No trailing whitespace
-
-Just like you brush your teeth after every meal, you clean up any trailing
-whitespace in your JS files before committing. Otherwise the rotten smell of
-careless neglect will eventually drive away contributors and/or co-workers.
-
 ## Sem espaço em branco
 
-Assim como você escova os dentes após cada refeição, você deve limpar qualquer espaço em branco em seu arquivo JS antes de realizar o commit. Caso contrário, as negligências causadas afastará contribuidores e/ou colegas de trabalho.
+Assim como você escova os dentes após cada refeição, você deve limpar qualquer espaço em branco em seu arquivo JS antes de realizar o commit.
 
 ## Use Semicolons
 
@@ -46,7 +40,6 @@ cheap syntactic pleasures.
 [the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
-
 ## Use Ponto e Vírgula
 
 De acordo com a [scientific research][hnsemicolons], o uso de vírgula é fundamental dentro da nossa comunidade. Considere os pontos chaves do [the opposition][], mas seja um tradicionalista quando se refere aos mecanismos de correção de erros
@@ -54,15 +47,9 @@ De acordo com a [scientific research][hnsemicolons], o uso de vírgula é fundam
 [the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
-## 80 characters per line
-
-Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
-last few years, but your brain has not. Use the additional room for split screen,
-your editor supports that, right?
-
 ## 80 caracteres por linha
 
-Faça com que suas linhas tenham 80 caracteres. Sim, os monitores estão crescendo cada vez mais nos ultimos anos, mas seu cérebro não. Use o "additional room" para dividir a tela, seu editor suporta isto, certo? 
+Faça com que suas linhas tenham 80 caracteres.
 
 ## Use aspas simples
 
@@ -203,7 +190,7 @@ File.fullPermissions = 0777;
 
 ## Criação de Objetos / Array
 
-Use trailing commas and put *short* declarations on a single line. Only quote
+Use uma única linhas para declarações curtas e use espaçõ depois da vírgula. Only quote
 keys when your interpreter complains:
 
 *Correto:*
@@ -229,7 +216,7 @@ var b = {"good": 'code'
 
 ## Use o operador ===
 
-Programming is not about remembering [stupid rules][comparisonoperators]. Use
+Programação não é só lembrar das [stupid rules][comparisonoperators]. Use
 o operador triplo de igualdade, já que irá funcionar como o esperado.
 
 *Correto:*
@@ -253,9 +240,9 @@ if (a == '') {
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
-## Use várias linhas para operator ternário
+## Use várias linhas para operador ternário
 
-O operador ternário não deve ser usado em uma única linha. Quebre-o em várias linhas.
+O operador ternário não deve ser usado em uma única linha. Quebre em várias linhas.
 
 *Correto:*
 
@@ -322,9 +309,7 @@ if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
 
 ## Escreva funções curtas
 
-Mantenha suas funções curtas. Uma função boa A good function fits on a slide that the people in
-the last row of a big room can comfortably read. So don't count on them having
-perfect vision and limit yourself to ~15 lines of code per function.
+Mantenha suas funções curtas. Uma função boa é aquele que as pessas que estão na última fileira de um grande sala conseguem ler confortavelmente. Portanto, não conte que eles tenham uma visão perfeita e limite-se a ~ 15 linhas de código por função.
 
 ## Return early from functions
 
@@ -363,7 +348,7 @@ function isPercentage(val) {
 }
 ```
 
-Com esse exemplo é possível encurtar ainda mais a função:
+Com esse exemplo é possível reduzir ainda mais a função:
 
 ```js
 function isPercentage(val) {
@@ -393,9 +378,9 @@ req.on('end', function() {
 });
 ```
 
-## No nested closures
+## Não alinhe (nest) closures
 
-Use closures, but don't nest them. Otherwise your code will become a mess.
+Use closures, mas não os alinhe (nest). Caso contrário, seu código ficará uma bagunça.
 
 *Correto:*
 
@@ -463,7 +448,7 @@ if (isSessionValid) {
 
 ## Object.freeze, Object.preventExtensions, Object.seal, with, eval
 
-Instruções que provavemente você nunca vai usar. Fique longe delas.
+Instruções que provavelmente você nunca vai usar. Fique longe delas.
 
 ## Getters e setters
 

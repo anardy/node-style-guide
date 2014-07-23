@@ -11,15 +11,9 @@ A tradução para o português foi realizada por [André Nardy](https://github.c
 
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
-## 2 Spaces for indention
-
-Use 2 spaces for indenting your code and swear an oath to never mix tabs and
-spaces - a special kind of hell is awaiting you otherwise.
-
 ## 2 Espaços para identação
 
-Use 2 espaços para identar seu código spaces for indenting your code and swear an oath to never mix tabs and
-spaces - a special kind of hell is awaiting you otherwise.
+Use 2 espaços para identar seu código e fazer um fazer um juramento de nunca misturar tabulações e espaços.
 
 ## Novas Linhas
 
@@ -29,16 +23,6 @@ Já o Windows a nova linha é indicada com (`\r\n`) e é proibido dentro de qual
 ## Sem espaço em branco
 
 Assim como você escova os dentes após cada refeição, você deve limpar qualquer espaço em branco em seu arquivo JS antes de realizar o commit.
-
-## Use Semicolons
-
-According to [scientific research][hnsemicolons], the usage of semicolons is
-a core value of our community. Consider the points of [the opposition][], but
-be a traditionalist when it comes to abusing error correction mechanisms for
-cheap syntactic pleasures.
-
-[the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
-[hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
 ## Use Ponto e Vírgula
 
@@ -92,9 +76,7 @@ Além disso, observe o uso de espaços antes e depois da instrução de condiç�
 
 ## Declare uma variável por instrução var
 
-Declare uma variável para cada instrução var, isto torna mais fácil a reordenação das linhas. Porém, ignore [Crockford][crockfordconvention] when it comes to
-declaring variables deeper inside a function, just the declarations wherever
-they make sense.
+Declare uma variável para cada instrução var, isto torna mais fácil a reordenação das linhas. Porém, ignore [Crockford][crockfordconvention] quando se trata de declaração de variáveis dentro de uma função, deixe apenas as declarações de onde elas fazem sentido.
 
 *Certo:*
 
@@ -258,10 +240,9 @@ var foo = (a === b)
 var foo = (a === b) ? 1 : 2;
 ```
 
-## Do not extend built-in prototypes
+## Não estenda build-in prototypes
 
-Do not extend the prototype of native JavaScript objects. Your future self will
-be forever grateful.
+Não estenda os objetos prototypes nativos do JavaScript.
 
 *Correto:*
 
@@ -285,9 +266,9 @@ if (a.empty()) {
 }
 ```
 
-## Use descriptive conditions
+## Use condições descritivas (descriptive conditions)
 
-Any non-trivial conditions should be assigned to a descriptively named variable or function:
+Qualquer condição não trivial deve ser atribuído a uma variável ou função descritiva com nome:
 
 *Correto:*
 
@@ -311,10 +292,9 @@ if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
 
 Mantenha suas funções curtas. Uma função boa é aquele que as pessas que estão na última fileira de um grande sala conseguem ler confortavelmente. Portanto, não conte que eles tenham uma visão perfeita e limite-se a ~ 15 linhas de código por função.
 
-## Return early from functions
+## Retorno (return) antecipado de funções
 
-To avoid deep nesting of if-statements, always return a function's value as early
-as possible.
+Para evitar maiores blocos de declaração if sempre retornar o valor de uma função o mais cedo possível
 
 *Correto:*
 
@@ -359,8 +339,7 @@ function isPercentage(val) {
 
 ## Nomei seus closures
 
-Feel free to give your closures a name. It shows that you care about them, and
-will produce better stack traces, heap and cpu profiles.
+Sinta-se livre para nomear seus clouseres. Isso mostra que você se preocupa com eles. Além disso, irá produzir mehores stack traces.
 
 *Correto:*
 
@@ -452,10 +431,8 @@ Instruções que provavelmente você nunca vai usar. Fique longe delas.
 
 ## Getters e setters
 
-Do not use setters, they cause more problems for people who try to use your
-software than they can solve.
+Não se setters. Eles causam problemas tanto para as pessoal que iram usar seu software do que eles podem resolver.
 
-Feel free to use getters that are free from [side effects][sideeffect], like
-providing a length property for a collection class.
+Sinta-se livre para usar getters que não causam [side effects][sideeffect], como o fornecimento de uma propriedade de comprimento para um calasse de coleção.
 
 [sideeffect]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)

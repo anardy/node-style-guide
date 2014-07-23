@@ -11,7 +11,7 @@ A tradução para o português foi realizada por [André Nardy](https://github.c
 
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
-## 2 Espaços para identaçã
+## 2 Espaços para identação
 
 Use 2 espaços para identar seu código e fazer um fazer um juramento de nunca misturar tabulações e espaços.
 
